@@ -16,5 +16,18 @@ namespace Desafio_Practico_2
         {
             InitializeComponent();
         }
+
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txt_dato_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar)) { e.Handled = false; }
+            else if (char.IsControl(e.KeyChar)) { e.Handled = false; }
+            else if (char.IsSeparator(e.KeyChar)) { e.Handled = false; }
+            else { e.Handled = true; MessageBox.Show("Solo se admiten letras", "Validación de texto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+        }
     }
 }
