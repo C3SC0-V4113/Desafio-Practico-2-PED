@@ -138,6 +138,7 @@
             this.txt_dato.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_dato.ForeColor = System.Drawing.Color.MidnightBlue;
             this.txt_dato.Location = new System.Drawing.Point(123, 41);
+            this.txt_dato.MaxLength = 1;
             this.txt_dato.Name = "txt_dato";
             this.txt_dato.Size = new System.Drawing.Size(100, 22);
             this.txt_dato.TabIndex = 1;
