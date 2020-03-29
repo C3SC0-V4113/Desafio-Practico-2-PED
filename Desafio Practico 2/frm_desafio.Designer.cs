@@ -43,6 +43,8 @@
             this.P_Cola02 = new System.Windows.Forms.Panel();
             this.P_Cola01 = new System.Windows.Forms.Panel();
             this.dgv_cola1 = new System.Windows.Forms.DataGridView();
+            this.panel_Arbol = new System.Windows.Forms.Panel();
+            this.dgv_cola2 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.EPvalidaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -50,8 +52,10 @@
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.P_AVL.SuspendLayout();
+            this.P_Cola02.SuspendLayout();
             this.P_Cola01.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cola1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cola2)).BeginInit();
             this.SuspendLayout();
             // 
             // EPvalidaciones
@@ -90,6 +94,7 @@
             this.btn_salir.TabIndex = 4;
             this.btn_salir.Text = "Salir";
             this.btn_salir.UseVisualStyleBackColor = true;
+            this.btn_salir.Click += new System.EventHandler(this.btn_salir_Click);
             // 
             // btn_reset
             // 
@@ -100,6 +105,7 @@
             this.btn_reset.TabIndex = 3;
             this.btn_reset.Text = "Limpiar";
             this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_reset.Click += new System.EventHandler(this.btn_reset_Click);
             // 
             // groupBox1
             // 
@@ -157,6 +163,7 @@
             // P_AVL
             // 
             this.P_AVL.BackColor = System.Drawing.Color.Gainsboro;
+            this.P_AVL.Controls.Add(this.panel_Arbol);
             this.P_AVL.Controls.Add(this.P_Cola02);
             this.P_AVL.Controls.Add(this.P_Cola01);
             this.P_AVL.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -168,6 +175,7 @@
             // P_Cola02
             // 
             this.P_Cola02.BackColor = System.Drawing.Color.Gainsboro;
+            this.P_Cola02.Controls.Add(this.dgv_cola2);
             this.P_Cola02.Dock = System.Windows.Forms.DockStyle.Right;
             this.P_Cola02.Location = new System.Drawing.Point(576, 0);
             this.P_Cola02.Name = "P_Cola02";
@@ -193,6 +201,24 @@
             this.dgv_cola1.Size = new System.Drawing.Size(144, 433);
             this.dgv_cola1.TabIndex = 0;
             // 
+            // panel_Arbol
+            // 
+            this.panel_Arbol.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_Arbol.Location = new System.Drawing.Point(144, 0);
+            this.panel_Arbol.Name = "panel_Arbol";
+            this.panel_Arbol.Size = new System.Drawing.Size(432, 433);
+            this.panel_Arbol.TabIndex = 2;
+            this.panel_Arbol.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Arbol_Paint);
+            // 
+            // dgv_cola2
+            // 
+            this.dgv_cola2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cola2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_cola2.Location = new System.Drawing.Point(0, 0);
+            this.dgv_cola2.Name = "dgv_cola2";
+            this.dgv_cola2.Size = new System.Drawing.Size(144, 433);
+            this.dgv_cola2.TabIndex = 0;
+            // 
             // frm_desafio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,8 +237,10 @@
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.P_AVL.ResumeLayout(false);
+            this.P_Cola02.ResumeLayout(false);
             this.P_Cola01.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_cola1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cola2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -231,6 +259,8 @@
         private System.Windows.Forms.TextBox txt_dato;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_cola1;
+        private System.Windows.Forms.Panel panel_Arbol;
+        private System.Windows.Forms.DataGridView dgv_cola2;
     }
 }
 

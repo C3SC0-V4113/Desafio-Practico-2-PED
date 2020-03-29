@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AVL.cs" />
     <Compile Include="ClaseLetras1.cs" />
+    <Compile Include="DibujarAVL.cs" />
     <Compile Include="frm_desafio.cs">
       <SubType>Form</SubType>
     </Compile>

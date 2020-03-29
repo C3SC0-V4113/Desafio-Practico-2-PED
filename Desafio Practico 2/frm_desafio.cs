@@ -12,6 +12,8 @@ namespace Desafio_Practico_2
 {
     public partial class frm_desafio : Form
     {
+        DibujarAVL arbolAVL = new DibujarAVL(null);
+        Graphics g;
         Queue<ClaseLetras1> CL1 = new Queue<ClaseLetras1>();
 
         public frm_desafio()
@@ -76,7 +78,50 @@ namespace Desafio_Practico_2
                 MessageBox.Show("El registro ha sido elimnado exitosamente de la cola","AVISO");
                 //Aqui debes tomar el dato para el AVL, antes de borrar el dato del textbox
                 MessageBox.Show("El registro elimando esta siendo trasladado a un AVL", "ATENCIÓN");
+                try
+                {
+                    //Pasar la letra a ASCII
+                    string datoletra = cl1.dletra;
+                    byte[] ascii = Encoding.ASCII.GetBytes(datoletra);
+                    foreach (byte item in ascii)
+                    {
+                        arbolAVL.Insertar(int.Parse(item.ToString()));
+                    }
+                    txt_dato.Clear();
+                    txt_dato.Focus();
+                    Refresh();
+                    Refresh();
+                }
+                catch (Exception ex)
+                {
+                    //errores.SetError(txt_dato, "Debe ser numerico");
+                    MessageBox.Show(ex.ToString());
+                }
             }
+        }
+
+        private void panel_Arbol_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.Clear(this.BackColor);
+            e.Graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAliasGridFit;
+            e.Graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            g = e.Graphics;
+            int datb = 0;
+            arbolAVL.DibujarArbol(g, this.Font, Brushes.White, Brushes.Black, Pens.White, datb, Brushes.Black);
+        }
+
+        private void btn_salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btn_reset_Click(object sender, EventArgs e)
+        {
+            arbolAVL = new DibujarAVL();
+            CL1 = new Queue<ClaseLetras1>();
+            dgv_cola1.DataSource = CL1.ToList();
+            Refresh();
+            Refresh();
         }
     }
 }
