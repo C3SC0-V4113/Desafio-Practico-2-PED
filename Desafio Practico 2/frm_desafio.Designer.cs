@@ -32,22 +32,26 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_desafio));
             this.EPvalidaciones = new System.Windows.Forms.ErrorProvider(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.P_Cola01 = new System.Windows.Forms.Panel();
-            this.P_Cola02 = new System.Windows.Forms.Panel();
-            this.P_AVL = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txt_dato = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_agregar = new System.Windows.Forms.Button();
-            this.btn_eliminar = new System.Windows.Forms.Button();
-            this.btn_reset = new System.Windows.Forms.Button();
             this.btn_salir = new System.Windows.Forms.Button();
+            this.btn_reset = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_eliminar = new System.Windows.Forms.Button();
+            this.btn_agregar = new System.Windows.Forms.Button();
+            this.txt_dato = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.P_AVL = new System.Windows.Forms.Panel();
+            this.P_Cola02 = new System.Windows.Forms.Panel();
+            this.P_Cola01 = new System.Windows.Forms.Panel();
+            this.dgv_cola1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.EPvalidaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.P_AVL.SuspendLayout();
+            this.P_Cola01.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cola1)).BeginInit();
             this.SuspendLayout();
             // 
             // EPvalidaciones
@@ -73,58 +77,29 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.P_AVL);
-            this.splitContainer1.Panel2.Controls.Add(this.P_Cola02);
-            this.splitContainer1.Panel2.Controls.Add(this.P_Cola01);
-            this.splitContainer1.Size = new System.Drawing.Size(893, 457);
-            this.splitContainer1.SplitterDistance = 297;
+            this.splitContainer1.Size = new System.Drawing.Size(1084, 433);
+            this.splitContainer1.SplitterDistance = 360;
             this.splitContainer1.TabIndex = 0;
             // 
-            // P_Cola01
+            // btn_salir
             // 
-            this.P_Cola01.BackColor = System.Drawing.Color.Gainsboro;
-            this.P_Cola01.Dock = System.Windows.Forms.DockStyle.Top;
-            this.P_Cola01.Location = new System.Drawing.Point(0, 0);
-            this.P_Cola01.Name = "P_Cola01";
-            this.P_Cola01.Size = new System.Drawing.Size(592, 100);
-            this.P_Cola01.TabIndex = 0;
+            this.btn_salir.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_salir.Location = new System.Drawing.Point(95, 356);
+            this.btn_salir.Name = "btn_salir";
+            this.btn_salir.Size = new System.Drawing.Size(75, 23);
+            this.btn_salir.TabIndex = 4;
+            this.btn_salir.Text = "Salir";
+            this.btn_salir.UseVisualStyleBackColor = true;
             // 
-            // P_Cola02
+            // btn_reset
             // 
-            this.P_Cola02.BackColor = System.Drawing.Color.Gainsboro;
-            this.P_Cola02.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.P_Cola02.Location = new System.Drawing.Point(0, 357);
-            this.P_Cola02.Name = "P_Cola02";
-            this.P_Cola02.Size = new System.Drawing.Size(592, 100);
-            this.P_Cola02.TabIndex = 1;
-            // 
-            // P_AVL
-            // 
-            this.P_AVL.BackColor = System.Drawing.Color.Gainsboro;
-            this.P_AVL.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.P_AVL.Location = new System.Drawing.Point(0, 100);
-            this.P_AVL.Name = "P_AVL";
-            this.P_AVL.Size = new System.Drawing.Size(592, 257);
-            this.P_AVL.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(59, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(36, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Dato";
-            // 
-            // txt_dato
-            // 
-            this.txt_dato.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_dato.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.txt_dato.Location = new System.Drawing.Point(123, 41);
-            this.txt_dato.Name = "txt_dato";
-            this.txt_dato.Size = new System.Drawing.Size(100, 22);
-            this.txt_dato.TabIndex = 1;
-            this.txt_dato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dato_KeyPress);
+            this.btn_reset.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_reset.Location = new System.Drawing.Point(14, 356);
+            this.btn_reset.Name = "btn_reset";
+            this.btn_reset.Size = new System.Drawing.Size(75, 23);
+            this.btn_reset.TabIndex = 3;
+            this.btn_reset.Text = "Limpiar";
+            this.btn_reset.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
@@ -138,15 +113,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
             // 
-            // btn_agregar
-            // 
-            this.btn_agregar.Location = new System.Drawing.Point(59, 38);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(75, 23);
-            this.btn_agregar.TabIndex = 0;
-            this.btn_agregar.Text = "Agregar";
-            this.btn_agregar.UseVisualStyleBackColor = true;
-            // 
             // btn_eliminar
             // 
             this.btn_eliminar.Location = new System.Drawing.Point(59, 82);
@@ -155,32 +121,82 @@
             this.btn_eliminar.TabIndex = 1;
             this.btn_eliminar.Text = "Eliminar";
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
-            // btn_reset
+            // btn_agregar
             // 
-            this.btn_reset.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_reset.Location = new System.Drawing.Point(12, 431);
-            this.btn_reset.Name = "btn_reset";
-            this.btn_reset.Size = new System.Drawing.Size(75, 23);
-            this.btn_reset.TabIndex = 3;
-            this.btn_reset.Text = "Limpiar";
-            this.btn_reset.UseVisualStyleBackColor = true;
+            this.btn_agregar.Location = new System.Drawing.Point(59, 38);
+            this.btn_agregar.Name = "btn_agregar";
+            this.btn_agregar.Size = new System.Drawing.Size(75, 23);
+            this.btn_agregar.TabIndex = 0;
+            this.btn_agregar.Text = "Agregar";
+            this.btn_agregar.UseVisualStyleBackColor = true;
+            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
-            // btn_salir
+            // txt_dato
             // 
-            this.btn_salir.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_salir.Location = new System.Drawing.Point(93, 431);
-            this.btn_salir.Name = "btn_salir";
-            this.btn_salir.Size = new System.Drawing.Size(75, 23);
-            this.btn_salir.TabIndex = 4;
-            this.btn_salir.Text = "Salir";
-            this.btn_salir.UseVisualStyleBackColor = true;
+            this.txt_dato.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_dato.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.txt_dato.Location = new System.Drawing.Point(123, 41);
+            this.txt_dato.Name = "txt_dato";
+            this.txt_dato.Size = new System.Drawing.Size(100, 22);
+            this.txt_dato.TabIndex = 1;
+            this.txt_dato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_dato_KeyPress);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(59, 44);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Dato";
+            // 
+            // P_AVL
+            // 
+            this.P_AVL.BackColor = System.Drawing.Color.Gainsboro;
+            this.P_AVL.Controls.Add(this.P_Cola02);
+            this.P_AVL.Controls.Add(this.P_Cola01);
+            this.P_AVL.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.P_AVL.Location = new System.Drawing.Point(0, 0);
+            this.P_AVL.Name = "P_AVL";
+            this.P_AVL.Size = new System.Drawing.Size(720, 433);
+            this.P_AVL.TabIndex = 2;
+            // 
+            // P_Cola02
+            // 
+            this.P_Cola02.BackColor = System.Drawing.Color.Gainsboro;
+            this.P_Cola02.Dock = System.Windows.Forms.DockStyle.Right;
+            this.P_Cola02.Location = new System.Drawing.Point(576, 0);
+            this.P_Cola02.Name = "P_Cola02";
+            this.P_Cola02.Size = new System.Drawing.Size(144, 433);
+            this.P_Cola02.TabIndex = 1;
+            // 
+            // P_Cola01
+            // 
+            this.P_Cola01.BackColor = System.Drawing.Color.Gainsboro;
+            this.P_Cola01.Controls.Add(this.dgv_cola1);
+            this.P_Cola01.Dock = System.Windows.Forms.DockStyle.Left;
+            this.P_Cola01.Location = new System.Drawing.Point(0, 0);
+            this.P_Cola01.Name = "P_Cola01";
+            this.P_Cola01.Size = new System.Drawing.Size(144, 433);
+            this.P_Cola01.TabIndex = 0;
+            // 
+            // dgv_cola1
+            // 
+            this.dgv_cola1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_cola1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_cola1.Location = new System.Drawing.Point(0, 0);
+            this.dgv_cola1.Name = "dgv_cola1";
+            this.dgv_cola1.Size = new System.Drawing.Size(144, 433);
+            this.dgv_cola1.TabIndex = 0;
             // 
             // frm_desafio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 457);
+            this.ClientSize = new System.Drawing.Size(1084, 433);
             this.Controls.Add(this.splitContainer1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frm_desafio";
@@ -193,6 +209,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.P_AVL.ResumeLayout(false);
+            this.P_Cola01.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_cola1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -210,6 +229,7 @@
         private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.TextBox txt_dato;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridView dgv_cola1;
     }
 }
 

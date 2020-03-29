@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClaseLetras1.cs" />
     <Compile Include="frm_desafio.cs">
       <SubType>Form</SubType>
     </Compile>
