@@ -245,7 +245,7 @@ namespace Desafio_Practico_2
             }
             else
             {
-                MessageBox.Show("Nodo inexistente en el arbol", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Nodo inexistente en el arbol, Dato de la Cola no agregado al Arbol", "Error", MessageBoxButtons.OK);
             }
             return NodoP;
         }

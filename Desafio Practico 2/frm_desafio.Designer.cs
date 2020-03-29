@@ -45,6 +45,9 @@
             this.dgv_cola1 = new System.Windows.Forms.DataGridView();
             this.panel_Arbol = new System.Windows.Forms.Panel();
             this.dgv_cola2 = new System.Windows.Forms.DataGridView();
+            this.btn_EliminarArbol = new System.Windows.Forms.Button();
+            this.rbtn_cola1 = new System.Windows.Forms.RadioButton();
+            this.rbtn_cola2 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.EPvalidaciones)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -109,12 +112,15 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.rbtn_cola2);
+            this.groupBox1.Controls.Add(this.rbtn_cola1);
+            this.groupBox1.Controls.Add(this.btn_EliminarArbol);
             this.groupBox1.Controls.Add(this.btn_eliminar);
             this.groupBox1.Controls.Add(this.btn_agregar);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(36, 86);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(197, 148);
+            this.groupBox1.Size = new System.Drawing.Size(216, 221);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Opciones";
@@ -203,6 +209,7 @@
             // 
             // panel_Arbol
             // 
+            this.panel_Arbol.BackColor = System.Drawing.Color.LightSeaGreen;
             this.panel_Arbol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Arbol.Location = new System.Drawing.Point(144, 0);
             this.panel_Arbol.Name = "panel_Arbol";
@@ -218,6 +225,38 @@
             this.dgv_cola2.Name = "dgv_cola2";
             this.dgv_cola2.Size = new System.Drawing.Size(144, 433);
             this.dgv_cola2.TabIndex = 0;
+            // 
+            // btn_EliminarArbol
+            // 
+            this.btn_EliminarArbol.Location = new System.Drawing.Point(38, 173);
+            this.btn_EliminarArbol.Name = "btn_EliminarArbol";
+            this.btn_EliminarArbol.Size = new System.Drawing.Size(117, 26);
+            this.btn_EliminarArbol.TabIndex = 2;
+            this.btn_EliminarArbol.Text = "Eliminar Arbol";
+            this.btn_EliminarArbol.UseVisualStyleBackColor = true;
+            this.btn_EliminarArbol.Click += new System.EventHandler(this.btn_EliminarArbol_Click);
+            // 
+            // rbtn_cola1
+            // 
+            this.rbtn_cola1.AutoSize = true;
+            this.rbtn_cola1.Location = new System.Drawing.Point(54, 111);
+            this.rbtn_cola1.Name = "rbtn_cola1";
+            this.rbtn_cola1.Size = new System.Drawing.Size(64, 20);
+            this.rbtn_cola1.TabIndex = 3;
+            this.rbtn_cola1.TabStop = true;
+            this.rbtn_cola1.Text = "Cola 1";
+            this.rbtn_cola1.UseVisualStyleBackColor = true;
+            // 
+            // rbtn_cola2
+            // 
+            this.rbtn_cola2.AutoSize = true;
+            this.rbtn_cola2.Location = new System.Drawing.Point(54, 137);
+            this.rbtn_cola2.Name = "rbtn_cola2";
+            this.rbtn_cola2.Size = new System.Drawing.Size(64, 20);
+            this.rbtn_cola2.TabIndex = 4;
+            this.rbtn_cola2.TabStop = true;
+            this.rbtn_cola2.Text = "Cola 2";
+            this.rbtn_cola2.UseVisualStyleBackColor = true;
             // 
             // frm_desafio
             // 
@@ -236,6 +275,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.P_AVL.ResumeLayout(false);
             this.P_Cola02.ResumeLayout(false);
             this.P_Cola01.ResumeLayout(false);
@@ -261,6 +301,9 @@
         private System.Windows.Forms.DataGridView dgv_cola1;
         private System.Windows.Forms.Panel panel_Arbol;
         private System.Windows.Forms.DataGridView dgv_cola2;
+        private System.Windows.Forms.RadioButton rbtn_cola2;
+        private System.Windows.Forms.RadioButton rbtn_cola1;
+        private System.Windows.Forms.Button btn_EliminarArbol;
     }
 }
 

@@ -15,10 +15,12 @@ namespace Desafio_Practico_2
         DibujarAVL arbolAVL = new DibujarAVL(null);
         Graphics g;
         Queue<ClaseLetras1> CL1 = new Queue<ClaseLetras1>();
+        Queue<ClaseLetras1> CL2 = new Queue<ClaseLetras1>();
 
         public frm_desafio()
         {
             InitializeComponent();
+            rbtn_cola1.Checked = true;
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -50,6 +52,7 @@ namespace Desafio_Practico_2
          
             EPvalidaciones.SetError(txt_dato, "");
         }
+
         private void btn_agregar_Click(object sender, EventArgs e)
         {
             BorarSMS();
@@ -63,39 +66,51 @@ namespace Desafio_Practico_2
                 dgv_cola1.DataSource = CL1.ToArray();
                 txt_dato.Clear();
             }
-          
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            if(CL1.Count !=0)
+            if (rbtn_cola1.Checked == true)
             {
-                ClaseLetras1 cl1 = new ClaseLetras1();
-                cl1 = CL1.Dequeue();
+                if (CL1.Count != 0)
+                {
+                    ClaseLetras1 cl1 = new ClaseLetras1();
+                    cl1 = CL1.Dequeue();
 
-                txt_dato.Text = cl1.dletra;
-                dgv_cola1.DataSource = CL1.ToList();
-                MessageBox.Show("El registro ha sido elimnado exitosamente de la cola","AVISO");
-                //Aqui debes tomar el dato para el AVL, antes de borrar el dato del textbox
-                MessageBox.Show("El registro elimando esta siendo trasladado a un AVL", "ATENCIÓN");
-                try
-                {
-                    //Pasar la letra a ASCII
-                    string datoletra = cl1.dletra;
-                    byte[] ascii = Encoding.ASCII.GetBytes(datoletra);
-                    foreach (byte item in ascii)
+                    txt_dato.Text = cl1.dletra;
+                    dgv_cola1.DataSource = CL1.ToList();
+                    MessageBox.Show("El registro ha sido elimnado exitosamente de la cola", "AVISO");
+                    //Aqui debes tomar el dato para el AVL, antes de borrar el dato del textbox
+                    MessageBox.Show("El registro elimando esta siendo trasladado a un AVL", "ATENCIÓN");
+                    try
                     {
-                        arbolAVL.Insertar(int.Parse(item.ToString()));
+                        //Pasar la letra a ASCII
+                        string datoletra = cl1.dletra;
+                        byte[] ascii = Encoding.ASCII.GetBytes(datoletra);
+                        foreach (byte item in ascii)
+                        {
+                            arbolAVL.Insertar(int.Parse(item.ToString()));
+                        }
+                        txt_dato.Clear();
+                        txt_dato.Focus();
+                        Refresh();
+                        Refresh();
                     }
-                    txt_dato.Clear();
-                    txt_dato.Focus();
-                    Refresh();
-                    Refresh();
+                    catch (Exception ex)
+                    {
+                        //errores.SetError(txt_dato, "Debe ser numerico");
+                        MessageBox.Show(ex.ToString());
+                    }
                 }
-                catch (Exception ex)
+            }
+            else
+            {
+                if (CL1.Count != 0)
                 {
-                    //errores.SetError(txt_dato, "Debe ser numerico");
-                    MessageBox.Show(ex.ToString());
+                    ClaseLetras1 cl1 = new ClaseLetras1();
+                    cl1 = CL2.Dequeue();
+                    dgv_cola2.DataSource = CL2.ToList();
+                    MessageBox.Show("El registro ha sido elimnado exitosamente de la cola", "AVISO");
                 }
             }
         }
@@ -119,9 +134,46 @@ namespace Desafio_Practico_2
         {
             arbolAVL = new DibujarAVL();
             CL1 = new Queue<ClaseLetras1>();
+            CL2 = new Queue<ClaseLetras1>();
             dgv_cola1.DataSource = CL1.ToList();
+            dgv_cola2.DataSource = CL1.ToList();
             Refresh();
             Refresh();
+        }
+
+        private void btn_EliminarArbol_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //Pasar la letra a ASCII
+                string datoletra = txt_dato.Text;
+                byte[] ascii = Encoding.ASCII.GetBytes(datoletra);
+                foreach (byte item in ascii)
+                {
+                    arbolAVL.Eliminar(int.Parse(item.ToString()));
+
+                    //Pasando de Int a String gracias a ASCII
+                    char s = (char)(item);
+
+                    BorarSMS();
+                    if (Validaciones())
+                    {
+                        ClaseLetras1 cl1 = new ClaseLetras1();
+                        cl1.dletra = s.ToString().ToLower();
+                        CL2.Enqueue(cl1);
+                        dgv_cola2.DataSource = null;
+                        dgv_cola2.DataSource = CL2.ToArray();
+                        txt_dato.Clear();
+                    }
+                }
+                txt_dato.Clear();
+                Refresh();
+                Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fallo en Eliminar");
+            }
         }
     }
 }
