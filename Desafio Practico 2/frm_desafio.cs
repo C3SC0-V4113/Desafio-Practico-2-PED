@@ -80,7 +80,6 @@ namespace Desafio_Practico_2
                     txt_dato.Text = cl1.dletra;
                     dgv_cola1.DataSource = CL1.ToList();
                     MessageBox.Show("El registro ha sido elimnado exitosamente de la cola", "AVISO");
-                    //Aqui debes tomar el dato para el AVL, antes de borrar el dato del textbox
                     MessageBox.Show("El registro elimando esta siendo trasladado a un AVL", "ATENCIÓN");
                     try
                     {
